@@ -106,15 +106,37 @@ a {
   left: 0;
 }
 
+#toggle:checked ~ label {
+  border-bottom: 1px solid red;
+  transform: rotate(30deg);
+  position: relative;
+}
+
+#toggle:checked ~ label:after {
+  position: absolute;
+  content: '';
+  top: 15px;
+  width: 30px;
+  border-bottom: 1px solid red;
+  transform: rotate(90deg);
+}
+
+
+#toggle:checked ~ label .bar {
+  display: none;
+}
+
 @media screen and (max-width: 660px) {
   .toggler {
     display: flex;
+    position: relative;
   }
   .header__menu {
     position: fixed;
     display: block;
     top: 10%;
     margin: 0;
+    padding: 0;
     left: -100%;
     font-size: 56px;
     width: 100%;
@@ -122,5 +144,8 @@ a {
     transition: all 0.3s linear;
     height: 100vh;
     background: #00ADB5;
+  }
+  .menu__item:not(:last-child) {
+    margin: 0;
   }
 }
