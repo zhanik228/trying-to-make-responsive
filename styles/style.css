@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* normalizing */
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 400;
+  background-color: #000;
+  line-height: 1.7;
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* header */
+.header {
+  padding: 20px 0;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__menu {
+  list-style-type: none;
+  display: flex;
+}
+
+.menu__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.header__buttons {
+  display: flex;
+  align-items: center;
+}
+
+.header__btn {
+  padding: 8px 17px;
+  background-color: #00ADB5;
+  border-radius: 9px;
+}
+
+.header__btn_login {
+  margin-right: 15px;
+}
+
+.header__btn {
+  margin-right: 2px;
+}
+
+.header__theme {
+  width: 36px;
+  height: 36px;
+}
+
+.header__theme img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* mobile menu */
+
+#toggle {
+  display: none;
+}
+
+.toggler {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.toggler .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+}
+
+#toggle:checked ~ nav .header__menu {
+  left: 0;
+}
+
+@media screen and (max-width: 660px) {
+  .toggler {
+    display: flex;
+  }
+  .header__menu {
+    position: fixed;
+    display: block;
+    top: 30%;
+    left: -100%;
+    font-size: 56px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s linear;
+  }
+}
